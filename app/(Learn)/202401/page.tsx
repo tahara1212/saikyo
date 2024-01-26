@@ -22,7 +22,7 @@ export default function Home() {
   `
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1>202401</h1>
+      <h1>組み込みの型ユーティリティReadonly<T>を使用せず、T のすべてのプロパティを読み取り専用にする型を実装します。実装された型のプロパティは再割り当てできません。</h1>
       <SyntaxHighlighter language="typescript" style={dark}>
         {codeString.trim()}
       </SyntaxHighlighter>
