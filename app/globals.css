@@ -20,4 +20,7 @@
   .text-balance {
     text-wrap: balance;
   }
+  .text-main-body {
+    color: rgba(3, 10, 18, .8)
+  }
 }
