@@ -37,7 +37,7 @@ export default function Home() {
   type spaceXLength = Length<spaceX>; // expected 5
 `
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <div>
       <h1>{`組み込みの型ユーティリティReadonly<T>を使用せず、T のすべてのプロパティを読み取り専用にする型を実装します。実装された型のプロパティは再割り当てできません。`}</h1>
       <SyntaxHighlighter language="typescript" style={tomorrow}>
         {codeString.trim()}
@@ -48,6 +48,6 @@ export default function Home() {
         {codeString02.trim()}
       </SyntaxHighlighter>
       <Link href="/" className="text-blue-200 underline">Home</Link>
-    </main>
+    </div>
   );
 }

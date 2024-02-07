@@ -4,15 +4,21 @@ import Link from "next/link";
 
 export default function Home() {
   const codeString = `
-    // Tuple型からObject型を生成するTupleToObjectを実装してください。
-
-    type TupleToObject<T extends readonly any[]> = {
-      [K in T[number]]: K
+    // MyReadonly<T>を実装してください
+    // MyReadonlyは、Tのプロパティをすべて読み取り専用にする型です
+    type MyReadonly<T> = {
+      readonly [K in keyof T]: T[K]
     }
     
-    const tuple = ["tesla", "model 3", "model X", "model Y"] as const;
+    interface Todo {
+      title: string;
+      description: string;
+    }
     
-    type result = TupleToObject<typeof tuple>; // expected { tesla: 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
+    const todo: MyReadonly<Todo> = {
+      title: "Hey",
+      description: "foobar",
+    };
   `
   const codeString02 = `
   // 配列の長さを返すLength<T>を実装してください。
@@ -31,7 +37,7 @@ export default function Home() {
   type spaceXLength = Length<spaceX>; // expected 5
 `
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <div>
       <h1>{`組み込みの型ユーティリティReadonly<T>を使用せず、T のすべてのプロパティを読み取り専用にする型を実装します。実装された型のプロパティは再割り当てできません。`}</h1>
       <SyntaxHighlighter language="typescript" style={tomorrow}>
         {codeString.trim()}
@@ -42,6 +48,6 @@ export default function Home() {
         {codeString02.trim()}
       </SyntaxHighlighter>
       <Link href="/" className="text-blue-200 underline">Home</Link>
-    </main>
+    </div>
   );
 }
