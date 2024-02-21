@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
+  let photos = Array.from({ length: 6 }, (_, i) => i + 1);
+
   return (
     <div>
       <h1 className="text-xl">考えをまとめる場所</h1>
@@ -23,12 +25,11 @@ export default function Home() {
       </div>
       <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
       <div className="mt-5 grid grid-cols-4 gap-5">
-        <Link href="202401" className="text-blue-200 underline">2024/01</Link>
-        <Link href="202402" className="text-blue-200 underline">2024/02</Link>
-        <Link href="202403" className="text-blue-200 underline">2024/03</Link>
-        <Link href="202404" className="text-blue-200 underline">2024/04</Link>
-        <Link href="202405" className="text-blue-200 underline">2024/05</Link>
-        <Link href="202406" className="text-blue-200 underline">2024/06</Link>
+        {photos.map((id) => (
+          <Link className="text-blue-200 underline" key={id} href={`/achieve/${id}`} passHref>
+            {id}
+          </Link>
+        ))}
       </div>
 
     </div>
