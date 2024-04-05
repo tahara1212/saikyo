@@ -1,7 +1,7 @@
 import { Modal } from './modal';
 
 const ModalPage = () => {
-  const a = "PPPPPP"
+  const a = "PPPPPPA"
   return (
     <Modal>
       {a}

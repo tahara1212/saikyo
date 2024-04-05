@@ -3,5 +3,10 @@ export default function PhotoPage({
 }: {
   params: { id: string };
 }) {
-  return <div className="card">id:{id}</div>;
+  return (
+    <div className="card">
+      <p>id:{id}</p>
+      <p>page</p>
+    </div>
+  );
 }

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const links = [
+  '202401',
+  '202402',
+  '202403',
+  '202404',
+]
+
 export default function Page() {
   let photos = Array.from({ length: 6 }, (_, i) => i + 1);
 
@@ -25,9 +32,14 @@ export default function Page() {
       </div>
       <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
       <div className="mt-5 grid grid-cols-4 gap-5">
-        {photos.map((id) => (
+        {/* {photos.map((id) => (
           <Link className="text-blue-200 underline" key={id} href={`/achieve/${id}`} passHref>
             {id}
+          </Link>
+        ))} */}
+        {links.map((link) => (
+          <Link key={link} className="text-blue-200 underline" href={`/${link}`} passHref>
+            {link}
           </Link>
         ))}
       </div>
