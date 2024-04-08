@@ -127,7 +127,7 @@ html {
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words p-16 h-auto;
+  @apply text-gray-900 leading-normal break-words p-16 h-auto text-left;
 }
 
 .markdown > * + * {
@@ -203,7 +203,7 @@ html {
 }
 
 .markdown ul {
-  @apply text-base pl-8 list-disc;
+  @apply text-base pl-8 list-disc text-left;
 }
 
 .markdown ol {
