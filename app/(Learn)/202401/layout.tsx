@@ -16,8 +16,8 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 text-main-body">
-      <div className="mx-auto w-full px-6 xs:px-7 sm:px-10 max-w-screen-md text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center text-main-body">
+      <div className="mx-auto w-full max-w-screen-md text-center">
       {children}
       {modal}
       <div id="modal-root" />

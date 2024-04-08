@@ -127,7 +127,7 @@ html {
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words p-16;
+  @apply text-gray-900 leading-normal break-words p-16 h-auto;
 }
 
 .markdown > * + * {
