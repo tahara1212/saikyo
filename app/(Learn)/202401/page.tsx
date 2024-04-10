@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import { HomeButton } from '@/app/_components/HomeButton/HomeButton';
+import { HomeLink } from '@/app/_components/HomeLink/HomeLink';
+import { ModalLinkList } from '@/app/_components/ModalButton/ModalLinkList';
 
 export default function Page() {
   // マークダウンファイル一覧を取得
@@ -25,25 +26,13 @@ export default function Page() {
       ...matterResult.data,
     };
   });
-  console.log(allPostsData)
-
-  let photos = Array.from({ length: 10 }, (_, i) => i + 1);
 
   return (
     <>
     <section>
-      <ul className="cards-container">
-        {allPostsData.map(({ id }) => (
-          <li key={id} className="list-none">
-            <Link href={`/202401/achieve/${id}`} className="text-blue-200 underline">
-              {id}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
+      <ModalLinkList allPostsData={allPostsData} path={"/202401/achieve"} />
     </section>
-    <HomeButton />
+    <HomeLink />
       </>
   );
 }
