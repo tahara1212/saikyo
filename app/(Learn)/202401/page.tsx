@@ -29,10 +29,10 @@ export default function Page() {
 
   return (
     <>
-    <section>
-      <ModalLinkList allPostsData={allPostsData} path={"/202401/achieve"} />
-    </section>
-    <HomeLink />
-      </>
+      <section>
+        <ModalLinkList allPostsData={allPostsData} path={"/202401/achieve"} />
+      </section>
+      <HomeLink />
+    </>
   );
 }
