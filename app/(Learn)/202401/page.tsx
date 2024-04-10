@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
+import { HomeButton } from '@/app/_components/HomeButton/HomeButton';
 
 export default function Page() {
   // マークダウンファイル一覧を取得
@@ -29,15 +30,20 @@ export default function Page() {
   let photos = Array.from({ length: 10 }, (_, i) => i + 1);
 
   return (
-    <section className="cards-container">
-      {allPostsData.map(({ id }) => (
-        <li key={id} className="list-none">
-          <Link href={`/202401/achieve/${id}`} className="text-blue-200 underline">
-            {id}
-          </Link>
-        </li>
-      ))}
-      <Link href="/" className="text-blue-200 underline">Homes</Link>
+    <>
+    <section>
+      <ul className="cards-container">
+        {allPostsData.map(({ id }) => (
+          <li key={id} className="list-none">
+            <Link href={`/202401/achieve/${id}`} className="text-blue-200 underline">
+              {id}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
     </section>
+    <HomeButton />
+      </>
   );
 }
